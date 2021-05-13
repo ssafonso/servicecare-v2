@@ -2,7 +2,7 @@ FROM openjdk:8-jdk-alpine
 VOLUME /tmp
 ARG JAVA_OPTS
 ENV JAVA_OPTS=$JAVA_OPTS
-COPY target/vwdemo-0.0.1-SNAPSHOT.jar server.jar
+COPY ./vwdemo-0.0.1-SNAPSHOT.jar server.jar
 EXPOSE 8080
 #ENTRYPOINT exec java $JAVA_OPTS -jar server.jar
 # For Spring-Boot project, use the entrypoint below to reduce Tomcat startup time.
