@@ -28,6 +28,9 @@ No need to perform any extra configurations to start using the application. To s
 http://localhost:3001/
 ```
 
+The available licenses to search are 
+* 88CB88
+* 88CA88
 
 
 ## DB
