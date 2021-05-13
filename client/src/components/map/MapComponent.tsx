@@ -20,7 +20,7 @@ let truckLastLocation = {
 let mapGoogle: GoogleMap;
 let places: google.maps.places.PlacesService;
 let cacheChoices = {
-    license: "",
+    results: [],
     poiType: "",
     radius: null,
     truckLat: 0,
@@ -116,6 +116,11 @@ function handleSearch(data: FormData) {
         return;
 
     fetchTrucks(license).then(() => {
+        if (cacheChoices.results.length === 0) {
+            window.alert("No data for the selected license plate");
+            return;
+        }
+
         if (cacheChoices.poiType !== poi || cacheChoices.radius !== radius
             || cacheChoices.truckLat !== truckLastLocation.truckLastLat
             || cacheChoices.truckLng !== truckLastLocation.truckLastLng)
@@ -126,6 +131,7 @@ function handleSearch(data: FormData) {
 async function fetchTrucks(license: string): Promise<void> {
     const results: any = await getTruckByLicense(license);
     if (results.length !== 0) {
+        cacheChoices.results = results;
         clearMarkers(truckMarkers);
 
         truckLastLocation.truckLastLat = parseFloat(results[0].lat);
