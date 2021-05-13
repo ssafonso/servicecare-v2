@@ -130,8 +130,8 @@ function handleSearch(data: FormData) {
 
 async function fetchTrucks(license: string): Promise<void> {
     const results: any = await getTruckByLicense(license);
+    cacheChoices.results = results;
     if (results.length !== 0) {
-        cacheChoices.results = results;
         clearMarkers(truckMarkers);
 
         truckLastLocation.truckLastLat = parseFloat(results[0].lat);
