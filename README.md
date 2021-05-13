@@ -74,4 +74,4 @@ The client was built on react, using typescript. In order to allow further devel
 \---utils               -> Home of all the utilities necessary to run the app (for instance Google API scripts)
 ```
 
-For the purpose of this challenge, a billing account on google was configurated in order to leverage all services from Google Maps API. Associated with that account, a credential was generated in order to use the API. This credential can be fount under `client/src/env`. If necessary, one need only to change the credential in this file in order to use the Google Maps API. 
+For the purpose of this challenge, a billing account on google was configurated in order to leverage all services from Google Maps API. Associated with that account, a credential was generated in order to use the API. This credential can be found under `client/src/env`. If necessary, one need only to change the credential in this file in order to use the Google Maps API. 
