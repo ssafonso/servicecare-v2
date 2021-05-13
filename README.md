@@ -17,12 +17,12 @@ To run this project, simply run on git bash
 sh start.sh
 ```
 
-This command will build and start the 3 cointainers necessary to run the whole application: 
+This command will build and start the 3 containers necessary to run the whole application: 
 * postgres
 * client (react)
 * server (spring boot)
 
-No need to perform any extra configurations to start using the application. To start using the application just access the url bellow after all services are up and running
+No need to perform any extra configurations to start using the application. To start using the application just access the url below after all services are up and running
 
 ```
 http://localhost:3001/
@@ -36,9 +36,9 @@ The available licenses to search are
 ## DB
 ---
 
-The choosen DB for this project was postgres. Whenever you start the application, a pre-configurated sql script will populate the DB with some data in order to be able to test the aplication. 
+The chosen DB for this project was postgres. Whenever you start the application, a pre-configured sql script will populate the DB with some data in order to be able to test the application. 
 
-Currently, the DB has information regarding two trucks, beeing in 2 different locations for testing purposes. 
+Currently, the DB has information regarding two trucks, being in 2 different locations for testing purposes. 
 
 ![dbdata](https://github.com/ssafonso/servicecare-v2/blob/main/postgres/dbdata.PNG?raw=true "Optional Title")
 
@@ -46,7 +46,7 @@ Currently, the DB has information regarding two trucks, beeing in 2 different lo
 ## Server
 ---
 
-The server was built on Spring Boot, using a model to map the DB data and a controller to allow acess to the data. Altough more methods were created, only one is currently being used by the frontend 
+The server was built on Spring Boot, using a model to map the DB data and a controller to allow access to the data. Although more methods were created, only one is currently being used by the frontend 
 
 ```java
 findByLicenseOrderByTsDesc
@@ -74,4 +74,4 @@ The client was built on react, using typescript. In order to allow further devel
 \---utils               -> Home of all the utilities necessary to run the app (for instance Google API scripts)
 ```
 
-For the purpose of this challenge, a billing account on google was configurated in order to leverage all services from Google Maps API. Associated with that account, a credential was generated in order to use the API. This credential can be found under `client/src/env`. If necessary, one need only to change the credential in this file in order to use the Google Maps API. 
+For the purpose of this challenge, a billing account on google was configured in order to leverage all services from Google Maps API. Associated with that account, a credential was generated in order to use the API. This credential can be found under `client/src/env`. If necessary, one need only to change the credential in this file in order to use the Google Maps API. 
