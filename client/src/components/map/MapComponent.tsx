@@ -112,6 +112,9 @@ function handleSearch(data: FormData) {
 
     const poiTypesList = !poi ? ['gas_station', 'restaurant', 'lodging'] : [poi];
 
+    if (!license)
+        return;
+
     fetchTrucks(license).then(() => {
         if (cacheChoices.poiType !== poi || cacheChoices.radius !== radius
             || cacheChoices.truckLat !== truckLastLocation.truckLastLat

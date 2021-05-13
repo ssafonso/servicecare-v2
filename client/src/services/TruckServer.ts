@@ -6,7 +6,7 @@ const VW_REST_API_URL = 'http://localhost:8081/api/v1';
 export const getTruckByLicense = async (license: string): Promise<void> => {
     return await axios.get(`${VW_REST_API_URL}/truck/license`, {
         params: {
-            license: license
+            license: license.toUpperCase()
         }
     })
         .then((response) => {
